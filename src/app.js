@@ -1,5 +1,6 @@
 const Beers = require('./models/beers.js');
 const BeersListView = require('./views/beers_list_view.js')
+const BeerView = require('./views/beer_view.js')
 
 document.addEventListener('DOMContentLoaded', () => {
   // console.log('JavaScript Loaded');
