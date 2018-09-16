@@ -20,21 +20,32 @@ BeerView.prototype.render = function () {
 
   const image = document.createElement('img');
   image.src = this.beer.image_url;
-  image.alt = `The ${this.beer.name} label`
+  image.alt = `The ${this.beer.name} label design`;
+  image.id = 'labelDesign';
   beerContainer.appendChild(image);
 
-  const food_pairing = document.createElement('ul');
-  beerContainer.appendChild(food_pairing);
+  const description = document.createElement('p');
+  description.textContent = this.beer.description;
+  beerContainer.appendChild(description);
 
-  const fp_text = this.beer.food_pairing.toString();
-  const fp_splits = fp_text.split([',']);
+  const foodPairing = document.createElement('ul');
+  foodPairing.textContent = `Food pairing ideas`;
+  foodPairing.id = 'foodPairingHeader';
+  beerContainer.appendChild(foodPairing);
 
-  const fp_listItem = fp_splits.forEach((fp_split) => {
-    const fp_listItem = document.createElement('li')
-    fp_listItem.textContent = fp_split;
-    fp_listItem.classList = 'food_pairing';
-    food_pairing.appendChild(fp_listItem);
+  const fpText = this.beer.food_pairing.toString();
+  const fpSplits = fpText.split([',']);
+  const fpListItem = fpSplits.forEach((fpSplit) => {
+    const fpListItem = document.createElement('li')
+    fpListItem.textContent = fpSplit;
+    fpListItem.classList = 'food_pairing';
+    foodPairing.appendChild(fpListItem);
   });
+
+  // const brewersTips = document.createElement('p');
+  // brewersTips.textContent = this.beer.brewers_tips;
+  // beerContainer.appendChild(brewersTips);
+
 };
 
 module.exports = BeerView;

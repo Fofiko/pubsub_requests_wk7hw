@@ -1,0 +1,30 @@
+body {
+  font-family: Monaco;
+  background-color: #F8F8F8;
+}
+
+.oneBeer {
+  display: grid;
+  grid-template-columns: 30% 50%;
+  padding: 2% 3%;
+  margin: 1%
+
+}
+
+.box {
+  padding: 20px;
+}
+
+
+img {
+  max-height: 200px;
+  max-width: inherit;
+}
+
+#foodPairingHeader {
+  font-style: italic;
+}
+
+.food_pairing {
+  font-style: normal;
+}
