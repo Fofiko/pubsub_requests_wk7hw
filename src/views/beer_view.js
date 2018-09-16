@@ -18,6 +18,11 @@ BeerView.prototype.render = function () {
   tagline.classList = 'tagline';
   beerContainer.appendChild(tagline);
 
+  const image = document.createElement('img');
+  image.src = this.beer.image_url;
+  image.alt = `The ${this.beer.name} label`
+  beerContainer.appendChild(image);
+
   const food_pairing = document.createElement('ul');
   beerContainer.appendChild(food_pairing);
 
@@ -27,6 +32,7 @@ BeerView.prototype.render = function () {
   const fp_listItem = fp_splits.forEach((fp_split) => {
     const fp_listItem = document.createElement('li')
     fp_listItem.textContent = fp_split;
+    fp_listItem.classList = 'food_pairing';
     food_pairing.appendChild(fp_listItem);
   });
 };
