@@ -7,9 +7,14 @@ const BeersListView = function () {
 
 BeersListView.prototype.bindEvents = function () {
   PubSub.subscribe('Beers:data-ready', (evt) => {
+    this.clearList();
     const data = evt.detail;
     this.createBeers(data);
   })
+};
+
+BeersListView.prototype.clearList = function () {
+  this.listElement.innerHTML = '';
 };
 
 BeersListView.prototype.createBeers = function (allBeers) {
@@ -18,5 +23,7 @@ BeersListView.prototype.createBeers = function (allBeers) {
     beerView.render();
   });
 };
+
+
 
 module.exports = BeersListView;
