@@ -16,10 +16,13 @@ SelectView.prototype.bindEvents = function () {
 };
 
 SelectView.prototype.populateSelect = function (foods) {
+  // console.log(foods);
   foods.forEach((food, index) => {
-    const option = this.createFoodOption(food, index);
-    this.selectElement.appendChild(option);
-  })
+    food.forEach((food_item, index) => {
+      const option = this.createFoodOption(food_item);
+      this.selectElement.appendChild(option);
+    });
+  });
 };
 
 SelectView.prototype.createFoodOption = function (food, index) {
@@ -28,5 +31,6 @@ SelectView.prototype.createFoodOption = function (food, index) {
   option.value = index;
   return option;
 };
+
 
 module.exports = SelectView;

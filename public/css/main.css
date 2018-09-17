@@ -11,6 +11,10 @@ body {
 
 }
 
+.tagline {
+  color: grey;
+}
+
 .box {
   padding: 20px;
 }
